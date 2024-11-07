@@ -1,0 +1,42 @@
+/* repositories.css */
+
+.bg-light-gray {
+  background-color: #f9f9f9; /* Light gray background for light mode */
+}
+
+.dark .bg-light-gray {
+  background-color: #2d3748; /* Darker background for dark mode */
+}
+
+.bg-gray-100 {
+  background-color: #edf2f7; /* Light gray background for repo cards in light mode */
+}
+
+.dark .bg-gray-100 {
+  background-color: #4a5568; /* Darker gray background for repo cards in dark mode */
+}
+
+/* Text colors */
+.text-blue-500 {
+  color: #4299e1; /* Blue color for links in light mode */
+}
+
+.dark .text-blue-500 {
+  color: #63b3ed; /* Lighter blue for links in dark mode */
+}
+
+.text-gray-600 {
+  color: #718096; /* Gray text for descriptions in light mode */
+}
+
+.dark .text-gray-600 {
+  color: #e2e8f0; /* Lighter gray for descriptions in dark mode */
+}
+
+.text-gray-900 {
+  color: #1a202c; /* Dark gray for titles in light mode */
+}
+
+.dark .text-gray-900 {
+  color: #f7fafc; /* Lighter gray for titles in dark mode */
+}
