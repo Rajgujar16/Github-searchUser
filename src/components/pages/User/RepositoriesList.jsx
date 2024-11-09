@@ -6,8 +6,7 @@ import { useParams } from 'react-router-dom';
 
 const RepositoriesList = () => {
   // Get username from URL params
-  const { username } = useParams(); // Destructure to get 'username' directly
-  console.log(username); // Check if username is being received correctly
+  const { username } = useParams();
 
   const dispatch = useDispatch();
 
@@ -19,9 +18,14 @@ const RepositoriesList = () => {
 
   // Select repositories for the specific username from Redux store
   const repositories = useSelector((state) => state.user.repositories[username] || []);
+  const loading = useSelector((state) => state.user.loading);
+  const error = useSelector((state) => state.user.error);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="">
+    <div className="repositories-list">
       {repositories.length > 0 ? (
         repositories.map((repo, index) => (
           <div key={index} className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-lg">

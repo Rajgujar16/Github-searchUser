@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 const UserProfile = () => {
   const dispatch = useDispatch();
   const { userData, repositories, loading, error } = useSelector((state) => state.user);
+  
   const { username } = useParams();
 
   useEffect(() => {
@@ -30,18 +31,18 @@ const UserProfile = () => {
           />
         </div>
       </div>
-      <h2 className="text-2xl font-bold dark:text-white">{userData?.name || 'The Octocat'}</h2>
+      <h2 className="text-2xl font-bold dark:text-white">{username}</h2>
       <p className="text-blue text-lg">@{userData?.login}</p>
       <p className="mt-2 text-gray dark:text-gray-400">{userData?.bio || 'This profile has no bio'}</p>
 
-      <div className="flex justify-between bg-gray-100 dark:bg-black-light-mode mt-4 p-4 rounded-lg">
-        <div className="flex flex-col items-center">
+      <div className="flex flex-col sm:flex-row sm:justify-between bg-gray-100 dark:bg-black-light-mode mt-4 p-4 rounded-lg">
+        <div className="flex flex-col items-center mb-4 sm:mb-0">
           <p className="text-gray dark:text-gray-400">Repos</p>
           <p className="font-bold text-lg dark:text-white">
             {repositories[username]?.length || 0}
           </p> {/* Display repository count */}
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mb-4 sm:mb-0">
           <p className="text-gray dark:text-gray-400">Followers</p>
           <p className="font-bold text-lg dark:text-white">{userData?.followers}</p>
         </div>

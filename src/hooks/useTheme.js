@@ -1,7 +1,7 @@
 import { useState , useEffect } from "react";
 
 const useTheme = () => {
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("dark");
 
     useEffect(() => {
         document.documentElement.className = theme;

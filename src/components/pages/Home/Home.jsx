@@ -3,6 +3,7 @@ import { FaSearch } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchUsers } from '../../../features/user/userSlice';
+import logo from "../../../assets/logo.png"
 
 const Home = () => {
   const [query, setQuery] = useState("");
@@ -75,9 +76,12 @@ const Home = () => {
             </div>
           ))
         ) : (
+         <div className='flex flex-col items-center justify-center'>
+          <img src={logo} alt="" />
           <p className="text-center text-gray-500 dark:text-gray-400">
             No users found. Please enter a GitHub username.
           </p>
+         </div>
         )}
       </div>
     </div>
@@ -85,3 +89,4 @@ const Home = () => {
 };
 
 export default Home;
+

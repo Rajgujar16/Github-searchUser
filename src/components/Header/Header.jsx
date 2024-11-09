@@ -7,7 +7,7 @@ const Header = () => {
 
     const[theme , toggleTheme] = useTheme()
     return (
-        <div className='flex mb-6 mt-3'>
+        <div className='flex mb-6 mt-3 px-6'>
             <h1>devfinder</h1>
             <button className='ml-auto flex items-center' onClick={toggleTheme}>
                 {theme === "dark" ? (
