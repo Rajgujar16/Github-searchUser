@@ -38,5 +38,5 @@
 }
 
 .dark .text-gray-900 {
-  color: #f7fafc; /* Lighter gray for titles in dark mode */
+  color: red; /* Lighter gray for titles in dark mode */
 }
