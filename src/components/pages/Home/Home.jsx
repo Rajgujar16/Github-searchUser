@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { fetchUsers } from '../../../features/user/userSlice';
-import logo from "../../../assets/logo.png"
+import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { fetchUsers } from "../../../features/user/userSlice";
+import logo from "../../../assets/logo.png";
 
 const Home = () => {
   const [query, setQuery] = useState("");
@@ -14,7 +14,6 @@ const Home = () => {
     setQuery(e.target.value);
   };
 
-  
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (query.trim()) {
@@ -43,7 +42,7 @@ const Home = () => {
             type="submit"
             className="flex items-center justify-center bg-blue text-white p-2 rounded w-12 h-12 dark:bg-blue-dark"
           >
-            <FaSearch />
+            <Trash2 />
           </button>
         </form>
       </div>
@@ -63,8 +62,12 @@ const Home = () => {
                 />
               </div>
               <div className="user-info">
-                <h4 className="text-lg font-bold dark:text-white">{user.login}</h4>
-                <small className="text-gray dark:text-gray-400">ID: {user.id}</small>
+                <h4 className="text-lg font-bold dark:text-white">
+                  {user.login}
+                </h4>
+                <small className="text-gray dark:text-gray-400">
+                  ID: {user.id}
+                </small>
                 <br />
                 <Link
                   to={`/user/${user.login}`} // Updated to pass the username
@@ -76,12 +79,12 @@ const Home = () => {
             </div>
           ))
         ) : (
-         <div className='flex flex-col items-center justify-center'>
-          <img src={logo} alt="" />
-          <p className="text-center text-gray-500 dark:text-gray-400">
-            No users found. Please enter a GitHub username.
-          </p>
-         </div>
+          <div className="flex flex-col items-center justify-center">
+            <img src={logo} alt="" />
+            <p className="text-center text-gray-500 dark:text-gray-400">
+              No users found. Please enter a GitHub username.
+            </p>
+          </div>
         )}
       </div>
     </div>
@@ -89,4 +92,3 @@ const Home = () => {
 };
 
 export default Home;
-
