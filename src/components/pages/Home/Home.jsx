@@ -42,7 +42,7 @@ const Home = () => {
             type="submit"
             className="flex items-center justify-center bg-blue text-white p-2 rounded w-12 h-12 dark:bg-blue-dark"
           >
-            <Trash2 />
+            <FaSearch />
           </button>
         </form>
       </div>
